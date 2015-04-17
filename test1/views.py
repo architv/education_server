@@ -8,7 +8,7 @@ def get_data(request):
 
 def add_data(request):
 	p = Post()
-	p.tit = " jello"
+	p.title = " jello"
 	p.save()
 	return HttpResponse("yo") 
 # Create your views here.
