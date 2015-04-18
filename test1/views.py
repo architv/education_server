@@ -2,9 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import *
 import requests, json
+import xml.etree.ElementTree as ET
+import kookoo
 
 def call_ivr(request):
-	return HttpResponse("hello")
+	r = kookoo.Response()
+	r.addPlayText("Hello World")
+	return HttpResponse(r)
 
 def get_coordinates(request):
 	postal_code = request.GET.get('postal_code')
