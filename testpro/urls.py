@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^random/', get_data),
     url(r'^random_add/', add_data),
-    url(r'^get/coordinates/', get_coordinates),
+    url(r'^get/coordinates', get_coordinates),
+    url(r'^ivr', call_ivr),
 )
