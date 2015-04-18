@@ -7,7 +7,7 @@ import kookoo
 
 def call_ivr(request):
 	r = kookoo.Response()
-	r.addPlayText("Hello World")
+	r.addPlayText("Laavanye I love you")
 	return HttpResponse(r)
 
 def get_coordinates(request):
