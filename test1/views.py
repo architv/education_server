@@ -26,8 +26,7 @@ def call_ivr(request):
 		else:
 			r = kookoo.Response()
 			pincode = r.append(kookoo.CollectDtmf(maxDigits=6))
-			pincode.append(kookoo.PlayAudio("pincode.wav"))
-			# pincode.append(kookoo.PlayText("Please enter the pincode"))
+			pincode.append(kookoo.PlayText("Please enter the pincode"))
 			return HttpResponse(r)
 
 def get_coordinates(request):
