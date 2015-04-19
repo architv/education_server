@@ -14,10 +14,11 @@ def call_ivr(request):
 		print event
 		if event == "GotDTMF":
 			pincode = int(request.GET['data'])
-			top_10_schools = SchoolNames.Query.all().limit(10)
+			top_10_schools = SchoolNames.Query.all().limit(2)
 			s = ""
 			for school in top_10_schools:
 				s += school.SCHOOL_NAME
+				s += "  and"
 			r = kookoo.Response()
 			r.addPlayText(s)
 			return HttpResponse(r)
