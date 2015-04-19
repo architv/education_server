@@ -15,7 +15,7 @@ def call_ivr(request):
 		if event == "GotDTMF":
 			pincode = int(request.GET['data'])
 			top_10_schools = SchoolNames.Query.all().limit(2)
-			s = ""
+			s = "The schools near you are "
 			for school in top_10_schools:
 				s += school.SCHOOL_NAME
 				s += "  and"
