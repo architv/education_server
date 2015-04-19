@@ -5,14 +5,13 @@ import requests, json
 import xml.etree.ElementTree as ET
 import kookoo
 from random import random, randint
+from django.shortcuts import render, render_to_response
 
 def call_ivr(request):
 	if request.method == 'GET':
 		print request.GET
 		event = request.GET.get('event', None)
 		print event
-		# logger = logging.getLogger('testlogger')
-		# logger.info(event)
 		if event == "GotDTMF":
 			pincode = int(request.GET['data'])
 			top_10_schools = SchoolNames.Query.all().limit(10)
@@ -36,14 +35,5 @@ def get_coordinates(request):
 	coordinates = geometry["location"]
 	return HttpResponse(json.dumps(coordinates))
 
-def get_data(request):
-	p = Post.objects.all()
-	r = requests.get("https://google.com")
-	return HttpResponse(str(p) + r.text) 
-
-def add_data(request):
-	p = Post()
-	p.title = " jello"
-	p.save()
-	return HttpResponse("yo") 
-# Create your views here.
+def home(request):
+	return render(request, "base.html")
