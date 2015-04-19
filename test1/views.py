@@ -26,9 +26,8 @@ def call_ivr(request):
 		else:
 			r = kookoo.Response()
 			pincode = r.append(kookoo.CollectDtmf(maxDigits=6))
-			# top_10_schools = list(SchoolNames.Query.all().limit(20))
-			# random_number = randint(1, 20)
-			pincode.append(kookoo.PlayText("Please enter the pincode"))
+			pincode.append(kookoo.PlayAudio("pincode.amr"))
+			# pincode.append(kookoo.PlayText("Please enter the pincode"))
 			return HttpResponse(r)
 
 def get_coordinates(request):
@@ -39,3 +38,6 @@ def get_coordinates(request):
 
 def home(request):
 	return render(request, "base.html")
+
+def search(request):
+	pass

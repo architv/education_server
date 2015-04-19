@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^get/coordinates', get_coordinates),
     url(r'^ivr', call_ivr),
-    url(r'^', home),
+    url(r'^$', home),
 )
