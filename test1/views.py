@@ -30,7 +30,7 @@ def call_ivr(request):
 		pincode.append(kookoo.PlayText("Please enter the pincode"))
 		output_string = "The school near you are " + str(top_10_schools[random_number - 1].SCHOOL_NAME)
 		print output_string
-		pincode.addPlayText("                                          ")
+		pincode.addPlayText(".............")
 		pincode.addPlayText(output_string)
 		r.addHangup()
 		return HttpResponse(r)
