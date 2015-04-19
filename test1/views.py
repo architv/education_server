@@ -21,6 +21,7 @@ def call_ivr(request):
 				s += "  and"
 			r = kookoo.Response()
 			r.addPlayText(s)
+			r.addHangup()
 			return HttpResponse(r)
 		else:
 			r = kookoo.Response()
